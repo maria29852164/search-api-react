@@ -1,10 +1,12 @@
 import React ,{Component} from 'react';
 
 import Search from './components/search';
+import Card from './components/card'
 
 export default class App extends Component {
   state={
-    search:''
+    search:'',
+    images:[]
   }
   getSearch=(term)=>{
     this.setState({search:term},()=>this.queryApi())
@@ -17,7 +19,7 @@ export default class App extends Component {
     //console.log(url)
     fetch(url).then(res=>{
       return res.json()
-    }).then(data=>console.log(data))
+    }).then(data=>this.setState({images:data.hits}))
 
   }
   
@@ -30,6 +32,11 @@ export default class App extends Component {
               <Search search={this.getSearch}/>
               {this.state.search}
             </div>
+
+            <Card images={this.state.images}/>
+            
+
+
 
             
         
