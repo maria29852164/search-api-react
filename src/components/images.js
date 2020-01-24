@@ -14,7 +14,7 @@ export default class Images extends Component{
             <div className="card-body text-center">
                 <h4 className="card-title ">Likes: {this.props.values.likes}</h4>
                 <img src={this.props.values.largeImageURL}  className="img-thumbnail app-card"></img>
-                <button className="btn btn-block btn-lg btn-primary">See...</button>
+                <a  href={this.props.values.largeImageURL} target="_blank" className="btn btn-block btn-lg btn-primary my-2">View Image</a>
             </div>
            </div>
             </div>
