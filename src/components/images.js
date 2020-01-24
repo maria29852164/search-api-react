@@ -11,7 +11,7 @@ export default class Images extends Component{
                     Tags {this.props.values.tags}
                     
             </div>
-            <div className="card-body text-center">
+            <div className="card-body text-center ">
                 <h4 className="card-title ">Likes: {this.props.values.likes}</h4>
                 <img src={this.props.values.largeImageURL}  className="img-thumbnail app-card"></img>
                 <a  href={this.props.values.largeImageURL} target="_blank" className="btn btn-block btn-lg btn-primary my-2">View Image</a>
