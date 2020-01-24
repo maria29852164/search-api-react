@@ -1,39 +1,32 @@
 import React ,{Component} from 'react'
+import Images from './images'
 
 export default class Card extends Component{
     referencia=React.createRef();
     state={
-        images:[],
-        card:''
+        images:[]
+       // card:''
     }
     sendCard=()=>{
-        let value=this.props.images
-        if( value.length === 0){
+        let values=this.props.images
+        if( values.length === 0){
             return null
         }
-       // console.log(value)
-       let card=''
-       let data=document.getElementById('data');
-       console.log(this.referencia.current)
-        value.map(value=>{
-        
+        //console.log(values)
+   
+       return(
+           <React.Fragment>
+               <div className="col-12 p-5 row">
+                    {values.map(value=>{
+                        <Images/>
+                    })
+                        
+                    }
+               </div>
+           </React.Fragment>
 
-         card +=`
-         <div className="card text-white bg-primary mb-3" >
-        <div className="card-header">Header</div>
-        <div className="card-body">
-            <h4 className="card-title">${value.likes}</h4>
-            <img src=${value.largeImageURL} className="img img-top rounded-circle"></img>
-        </div>
-</div>
-          
-        `
+       )
 
-            data.innerHTML+=card
-            
-            //console.log(this.referencia.current)
-        
-        }) 
          
       
 
@@ -41,19 +34,9 @@ export default class Card extends Component{
   
     render(){
         return(
-            <div id="data">
-
-                
+            <React.Fragment>
                 {this.sendCard()}
-                {this.state.card}
-
-             
-                
-                
-            </div>
-            
-        
-
+            </React.Fragment>
         );
     }
 }
