@@ -18,7 +18,7 @@ export default class Card extends Component{
            <React.Fragment>
                <div className="col-12 p-5 row">
                     {values.map(value=>{
-                        <Images/>
+                        return <Images values={value}/>
                     })
                         
                     }

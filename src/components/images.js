@@ -3,7 +3,7 @@ import React,{Component} from 'react'
 export default class Images extends Component{
     render(){
         return(
-           /* <div>
+            <div>
              <div className="card text-white bg-primary mb-3" >
             <div className="card-header text-center">
                     Tags {this.props.values.tags}
@@ -14,10 +14,8 @@ export default class Images extends Component{
                 <img src={this.props.values.largeImageURL} className="img-thumbnail"></img>
             </div>
            </div>
-            </div>*/
-            <div>
-                <p>gpha</p>
             </div>
+           
         )
     }
 }
